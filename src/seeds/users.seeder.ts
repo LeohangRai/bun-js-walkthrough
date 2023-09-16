@@ -1,4 +1,4 @@
-import usersData from '../data/users.txt';
+import usersData from '../../data/users.txt';
 import { User } from '../interfaces/user.interface';
 
 export function getUsersSeedData(): User[] {

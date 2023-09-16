@@ -1,4 +1,4 @@
-import quotesData from '../data/quotes.txt';
+import quotesData from '../../data/quotes.txt';
 import { Quote } from '../interfaces/quote.interface';
 
 export function getQuotesSeedData(): Quote[] {
