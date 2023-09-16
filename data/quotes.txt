@@ -1,0 +1,4 @@
+All animals are equal, but some are more equal than others | Animal Farm (George Orwell) | 8
+There are only two kinds of languages: the ones people complain about and the ones nobody uses | Bjarne Stroustrup | 7
+Generally, the craft of programming is the factoring of a set of requirements into a a set of functions and data structures. | JavaScript: The Good Parts (Douglas Crockford) | 7
+They say, "Jump", you say, "How high?" | Bullet in the Head (Rage Against The Machine) | 10

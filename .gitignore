@@ -1,4 +1,13 @@
-# Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
+# sqlite files
+*.sqlite
+
+# adds .vscode folder to ignored files
+.vscode/**/*
+
+# exclude these files from the .vscode directory from being ignored
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
 
 # Logs
 logs
