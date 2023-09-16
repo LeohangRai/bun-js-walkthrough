@@ -31,5 +31,20 @@ const quotesSeedData = getQuotesSeedDataFormattedString();
 myDb.query(`INSERT INTO "${TABLE_NAMES.QUOTES}" (quote, reference, stars) VALUES ${quotesSeedData};`).run();
 
 
+// .all() returns the values as an array of objects
 const usersTableData = myDb.query(`SELECT * FROM "${TABLE_NAMES.USERS}"`).all();
-console.table(usersTableData)
+console.table(usersTableData);
+
+// .values() returns the values as an array of arrays
+const usersTableData2 = myDb.query(`SELECT * FROM "${TABLE_NAMES.USERS}"`).values();
+console.table(usersTableData2);
+
+// .finalize() destroys the query Statement and frees any resources associated with it.
+const quotesQuery = myDb.query(`SELECT "quote" FROM "quotes"`)
+console.log(quotesQuery.all());
+quotesQuery.finalize();
+
+/*
+  Since the 'quotesQuery' statement has been destroyed by calling the .finalize() method, if you now call any methods on the quotesQuery statement (eg: 'quotesQuery.values()'), it will throw the following error:
+  "error: Statement has finalized"
+*/
