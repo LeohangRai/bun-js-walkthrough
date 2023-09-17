@@ -48,3 +48,18 @@ quotesQuery.finalize();
   Since the 'quotesQuery' statement has been destroyed by calling the .finalize() method, if you now call any methods on the quotesQuery statement (eg: 'quotesQuery.values()'), it will throw the following error:
   "error: Statement has finalized"
 */
+
+
+// Transactions
+const insertQuotesStatement = myDb.prepare(`INSERT INTO "${TABLE_NAMES.QUOTES}" (quote) VALUES ($newQuote)`);
+const insertQuotesTransaction = myDb.transaction((quotes: []) => {
+  for (const quote of quotes) insertQuotesStatement.run(quote);
+  return quotes.length;
+})
+
+const insertCount = insertQuotesTransaction([
+  { $newQuote: 'There are two ways to write error-free programs; only the third one works.' },
+  { $newQuote: 'One man’s crappy software is another man’s full-time job.' }
+])
+
+console.log(`Inserted ${insertCount} quotes using Transaction.`);

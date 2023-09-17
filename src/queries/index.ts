@@ -14,7 +14,7 @@ export const createQuotesTableQuery = `
   CREATE TABLE IF NOT EXISTS "${TABLE_NAMES.QUOTES}" (
 	  "id" INTEGER,
 	  "quote"	TEXT,
-	  "reference" INTEGER,
+	  "reference" TEXT,
     "stars" INTEGER DEFAULT 0,
 	  PRIMARY KEY("id")
   );
