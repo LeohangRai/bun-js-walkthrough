@@ -15,9 +15,13 @@ Bun.serve({
       case '/about':
         return new Response(figlet.textSync('About Page'));
       case '/file':
-        return new Response(Bun.file(path.join(import.meta.dir, '../data/animal-farm-orwell.txt')));
+        return new Response(
+          Bun.file(path.join(import.meta.dir, '../data/animal-farm-orwell.txt'))
+        );
       case '/video':
-        return new Response(Bun.file(path.join(import.meta.dir, '../data/video.mp4')).stream());
+        return new Response(
+          Bun.file(path.join(import.meta.dir, '../data/video.mp4')).stream()
+        );
       default:
         return new Response(figlet.textSync('404 NOT FOUND'));
     }
